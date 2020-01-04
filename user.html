@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AitechNodeMysql</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  </head>
+  <body>
+        <form action="#" method="POST">
+              <h1>SIGN UP</h1>
+              <div class="icon">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="formcontainer">
+              <div class="container">
+                <span id="message"></span>
+                <label for="name"><strong>Name</strong></label>
+                <input type="text" placeholder="Enter Fullname" name="name" id="name" >
+                <label for="email"><strong>E-mail</strong></label>
+                <input type="text" placeholder="Enter E-mail" name="email" id="email" >
+                <label for="phone"><strong>Phone</strong></label>
+                <input type="tel" placeholder="Enter Phone Number" name="phone" id="phone" >
+              </div>
+              <button id="btn" type="submit"><strong>SIGN UP</strong></button>
+      </form>
+
+
+      <script>
+      document.getElementById("btn").addEventListener("click", function(event){
+        event.preventDefault();
+        fetch('http://localhost:5000/collector', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+          })
+        })
+        .then(res => {
+          return res.json()
+        })
+        .then(function(data) {
+          // Here you get the data to modify as you please
+          if(data.message == 'success'){
+            let msg = document.getElementById('name').value = "Operation Successful"
+          }
+          console.log(data);
+        })
+        .catch(function(error) {
+          // If there is any error you will catch them here
+        });
+      });
+
+      </script>
+</body>
+
+</html>

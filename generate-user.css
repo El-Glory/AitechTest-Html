@@ -1,0 +1,49 @@
+html, body {
+     display: flex;
+     justify-content: center;
+     font-family: Roboto, Arial, sans-serif;
+     font-size: 15px;
+}
+
+  form {
+  border: 3px solid #f1f1f1;
+  margin-top: 50px;
+  width: 500px;
+  border-radius: 7px;
+  }
+
+  input[type=text], input[type= tel] {
+  width: 70%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 7px;
+  }
+  .icon {
+  font-size: 110px;
+  display: flex;
+  justify-content: center;
+  color: #4286f4;
+  }
+  button {
+  background-color: #4286f4;
+  color: white;
+  padding: 14px 0;
+  margin-left:232px;
+  border: none;
+  cursor: grab;
+  width: 28%;
+  border-radius: 10px;
+  }
+
+  .formcontainer{
+    height: 200px;
+  }
+
+
+  .container{
+    margin-top: 50px;
+    margin-left: 80px;
+  }
